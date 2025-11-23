@@ -1,0 +1,10 @@
+django>=5.0
+python-dotenv
+psycopg2-binary
+dj-database-url
+djangorestframework
+django-cors-headers
+cryptography
+openai
+google-generativeai
+
