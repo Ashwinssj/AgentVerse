@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #000000;
+  
+  /* Neo-Brutalist Colors */
+  --primary: #FFD700; /* Gold/Yellow */
+  --secondary: #FF69B4; /* Hot Pink */
+  --accent: #00FFFF; /* Cyan */
+  --border: #000000;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #1a1a1a;
+    --foreground: #ffffff;
+    
+    --primary: #FFD700;
+    --secondary: #FF69B4;
+    --accent: #00FFFF;
+    --border: #ffffff;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: var(--font-space-grotesk), sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-archivo-black), sans-serif;
+}
