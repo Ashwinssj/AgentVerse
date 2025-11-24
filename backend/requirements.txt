@@ -8,3 +8,5 @@ cryptography
 openai
 google-generativeai
 
+gunicorn
+whitenoise
