@@ -64,40 +64,40 @@ export default function ReportDashboardPage({ params }: { params: Promise<{ id: 
     const handleDownloadPDF = async () => {
         try {
             // Create a comprehensive text document
-            let content = "=" * 80 + "\n"
+            let content = "=".repeat(80) + "\n"
             content += "AGENTVERSE SESSION REPORT\n"
-            content += "=" * 80 + "\n\n"
+            content += "=".repeat(80) + "\n\n"
 
             content += `Session ID: ${id}\n`
             content += `Topic: ${session?.topic}\n`
             content += `Status: ${session?.status}\n`
             content += `Total Turns: ${session?.turns?.length || 0}\n\n`
 
-            content += "=" * 80 + "\n"
+            content += "=".repeat(80) + "\n"
             content += "SUMMARY\n"
-            content += "=" * 80 + "\n\n"
+            content += "=".repeat(80) + "\n\n"
             content += summary + "\n\n"
 
-            content += "=" * 80 + "\n"
+            content += "=".repeat(80) + "\n"
             content += "DETAILED REPORT\n"
-            content += "=" * 80 + "\n\n"
+            content += "=".repeat(80) + "\n\n"
             content += report + "\n\n"
 
-            content += "=" * 80 + "\n"
+            content += "=".repeat(80) + "\n"
             content += "AGENT PARTICIPATION\n"
-            content += "=" * 80 + "\n\n"
+            content += "=".repeat(80) + "\n\n"
             chartData.forEach(item => {
                 content += `${item.name}: ${item.value} turns (${item.percentage}%)\n`
             })
             content += "\n"
 
-            content += "=" * 80 + "\n"
+            content += "=".repeat(80) + "\n"
             content += "FULL TRANSCRIPT\n"
-            content += "=" * 80 + "\n\n"
+            content += "=".repeat(80) + "\n\n"
 
             session?.turns?.forEach((turn: any, i: number) => {
                 content += `Turn ${i + 1} - ${turn.agent_name}\n`
-                content += "-" * 80 + "\n"
+                content += "-".repeat(80) + "\n"
                 content += `${turn.response}\n\n`
             })
 
@@ -204,7 +204,7 @@ export default function ReportDashboardPage({ params }: { params: Promise<{ id: 
                                     cx="50%"
                                     cy="50%"
                                     labelLine={false}
-                                    label={({ name, percentage }) => `${name}: ${percentage}%`}
+                                    label={({ name, percentage }: any) => `${name}: ${percentage}%`}
                                     outerRadius={80}
                                     fill="#8884d8"
                                     dataKey="value"
